@@ -2,8 +2,7 @@ public class code_43 {
     public static void main(String[] args) {
         String t = "3141592";
         String p = "271";
-        Solution sol = new Solution();
-        System.out.println(sol.solution(t, p));
+        System.out.println(new Solution().solution(t, p));
     }
 }
 
