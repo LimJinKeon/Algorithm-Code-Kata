@@ -1,28 +1,19 @@
 public class code_42 {
-    public static String solution(String s) {
-        String answer = "";
-        int idx = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-
-            if (c == ' ') {
-                answer += c;
-                idx = 0;
-            } else {
-                if (idx % 2 == 0) {
-                    answer += Character.toUpperCase(c);
-                } else {
-                    answer += Character.toLowerCase(c);
+    public static int solution(int[] number) {
+        int answer = 0;
+        for(int i = 0; i < number.length - 2; i++){
+            for(int j = i + 1; j < number.length - 1; j++){
+                for(int k = j + 1; k < number.length; k++){
+                    if(number[i] + number[j] + number[k] == 0)
+                        answer++;
                 }
-                idx++;
             }
         }
         return answer;
     }
 
     public static void main(String[] args) {
-        String s = "try hello world";
-        System.out.println(solution(s));
+        int[] arr = {-2, 3, 0, 2, -5};
+        System.out.println(solution(arr));
     }
 }
