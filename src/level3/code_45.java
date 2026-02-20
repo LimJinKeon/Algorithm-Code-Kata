@@ -1,3 +1,5 @@
+package level3;
+
 public class code_45 {
     public static String solution(String s, int n) {
         String answer = "";

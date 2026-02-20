@@ -1,3 +1,5 @@
+package level3;
+
 public class code_42 {
     public static int solution(int[] number) {
         int answer = 0;
