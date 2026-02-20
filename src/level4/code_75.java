@@ -1,21 +1,30 @@
 package level4;
 
-import java.util.Arrays;
-
 public class code_75 {
     public static String solution(String s) {
-        int[] arr = Arrays.stream(s.split(" "))
-                .mapToInt(Integer::parseInt)
-                .toArray();
+        StringBuilder answer = new StringBuilder();
+        boolean isFirst = true;
 
-        int min = Arrays.stream(arr).min().getAsInt();
-        int max = Arrays.stream(arr).max().getAsInt();
-
-        return min + " " + max;
+        for(int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                answer.append(" ");
+                isFirst = true;
+            }
+            else {
+                if (isFirst) {
+                    answer.append(Character.toUpperCase(s.charAt(i)));
+                    isFirst = false;
+                }
+                else {
+                    answer.append(Character.toLowerCase(s.charAt(i)));
+                }
+            }
+        }
+        return answer.toString();
     }
 
     public static void main(String[] args) {
-        String s = "1 2 3 4";
+        String s = "3people unFollowed me";
         System.out.println(solution(s));
     }
 }
