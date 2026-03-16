@@ -24,10 +24,6 @@ public class code_81 {
             return gcd(b, a % b);
     }
 
-    private static int next(int x) {
-        return (x % 2 == 0) ? x / 2 : ((x / 2) + (x % 2));
-    }
-
     public static void main(String[] args) {
         int[] arr = {2, 6, 8, 14};
         System.out.println(solution(arr));
